@@ -1,0 +1,6 @@
+Lab
+
+In the last lab, you've deployed a storage account. We now want to add a second storage account
+Create a storage account in a separate folder
+Update the terraform file from the previous lab so that make use of storage account module
+Add a second storage account and deploy both

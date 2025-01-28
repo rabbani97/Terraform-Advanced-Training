@@ -1,0 +1,21 @@
+Error: creating Storage Account (Subscription: "aab300ef-5c07-4cc8-a9df-951c157bb99d"
+│ Resource Group Name: "rgcreation"
+│ Storage Account Name: "rgcreationstorage1"): performing Create: unexpected status 404 (404 Not Found) with error: ResourceGroupNotFound: Resource group 'rgcreation' could not be found.
+│ 
+│   with module.storage-account_1.azurerm_storage_account.storage,
+│   on ../modules/storage-account/main.tf line 1, in resource "azurerm_storage_account" "storage":
+│    1: resource "azurerm_storage_account" "storage" {
+│ 
+╵
+╷
+│ Error: creating Storage Account (Subscription: "aab300ef-5c07-4cc8-a9df-951c157bb99d"
+│ Resource Group Name: "rgcreation"
+│ Storage Account Name: "rgcreationstorage2"): performing Create: unexpected status 404 (404 Not Found) with error: ResourceGroupNotFound: Resource group 'rgcreation' could not be found.
+│ 
+│   with module.storage-account_2.azurerm_storage_account.storage,
+│   on ../modules/storage-account/main.tf line 1, in resource "azurerm_storage_account" "storage":
+│    1: resource "azurerm_storage_account" "storage" {
+
+    when we are creating the infrastructure usng modules we have to use resource_group_name as 
+    resource_group_name=azurerm_resource_group.rg.name 
+     location = azurerm_resource_group.rg.location 
