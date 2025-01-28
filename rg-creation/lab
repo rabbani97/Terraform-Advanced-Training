@@ -1,0 +1,64 @@
+The image provides a detailed lab exercise that builds upon a previously created module for storage accounts in Terraform. The exercise introduces advanced concepts to enhance the module. Here are the steps to follow:
+Lab Steps and Tasks
+
+Input Validation:
+
+Task: Add input validation for the storage account name variable.
+Requirements: The storage account name must be between 3 and 24 characters in length and consist of only lowercase letters and numbers.
+Action: Test the deployment with both a name that doesn't meet the requirements and with one that does to ensure the validation works properly.
+
+
+Outputs:
+
+Task: Add outputs to your storage account module.
+Outputs to Add:
+Storage account ID.
+Storage account name.
+
+
+Purpose: Expose these values from the module so that they can be used in other configurations or modules.
+
+
+Using the count Argument:
+
+Task: Use the count argument to deploy two storage accounts instead of invoking the module twice.
+Action: Test your code by deploying the storage accounts to ensure both are created as expected.
+
+
+Using for_each Instead of count:
+
+Scenario: Instead of using the count index in the storage account name, you want one storage account with the suffix one and the other with two.
+Task: Change your code to use the for_each argument and a variable for the storage account names.
+Action: Deploy your solution to see if it works, ensuring each storage account is correctly named.
+
+
+Deploy to Multiple Environments:
+
+Task: Deploy the solution to two separate resource groups: one for dev and one for prod.
+Steps:
+Create a variable to represent these environments.
+Add a .tfvars file for both environments to specify the variable values.
+Update the resource group name and storage account names to include the environment.
+
+
+Action: Deploy your solution to ensure it creates resources in both environments correctly.
+
+
+Conditional Resource Creation:
+
+Task: Add a resource of type azurerm_storage_container to your configuration to deploy a container.
+Condition: Only deploy this resource when the environment is prod.
+Action: Implement the conditional logic and test the deployment in both dev and prod environments to verify the container is only created in prod.
+
+
+
+Summary
+This lab exercise is designed to deepen your understanding and proficiency with Terraform modules, particularly focusing on:
+
+Input validation.
+Output management.
+Use of count and for_each arguments for dynamic resource creation.
+Deployment across multiple environments.
+Conditional resource creation based on environment.
+
+It comprehensively guides you through enhancing a module with best practices and advanced Terraform concepts, ensuring you can create scalable, reusable, and maintainable infrastructure as code.
